@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    font-family: "Roboto Slab", serif;
+    color: black;
+    background-color: #fff;
+    font-size: 1.5625rem; /* 25px equivalent, adjust base size in root if needed */
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+/* Improve the loading of fonts with display swap to avoid FOUC (Flash of Unstyled Content) */
+@font-face {
+    font-family: 'Noto Serif Display';
+    src: url('path/to/font/NotoSerifDisplay-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* Responsive font sizes using media queries */
+@media (max-width: 600px) {
+    body {
+        font-size: 1rem; /* Smaller font size on mobile devices */
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 10%;
+}
+
+a {
+    color: black; /* Consider different color for links for better visibility */
+}
+
+.mission {
+    display: flex;
+    height: 300px;
+    background-image: url("https://content.codecademy.com/PRO/independent-practice-projects/flexbox-business-site/img/skyscrapers.jpg");
+    padding-top: 35px;
+}
+
+.mission .content {
+    margin: auto 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Add transparency for overlay text readability */
+    width: 100%;
+    padding: 20px; /* Added padding */
+}
+
+#portfolio {
+    min-height: 500px;
+    margin: auto;
+    padding-top: 70px;
+}
+
+.companies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start; /* Align items from the top */
+}
+
+.company {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align children */
+    margin: 20px; /* Add margin for spacing around each company block */
+    width: 200px; /* Set a fixed width to maintain uniformity */
+}
+
+.company img {
+    width: 100%; /* Make image take full width of the .company container */
+    height: auto;
+    border-radius: 25px;
+}
+
+.company span {
+    margin-top: 10px; /* Space between image and text */
+    text-align: center; /* Center-align text */
+    display: block; /* Ensure span behaves like a block for alignment */
+}
+
+.team {
+    background-image: url("https://content.codecademy.com/PRO/independent-practice-projects/flexbox-business-site/img/blurred-road.jpg");
+    padding-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.teammate {
+    padding: 10px;
+    color: white;
+    flex-basis: 100%; /* Take full width on small screens */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    margin: 5px auto; /* Centers in the available space */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Align items to center horizontally */
+    max-width: 500px; /* Prevents elements from becoming too wide */
+}
+
+@media (min-width: 600px) {
+    .teammate {
+        flex-basis: 50%; /* Two teammates per row */
+    }
+}
+
+@media (min-width: 900px) {
+    .teammate {
+        flex-basis: 33.33%; /* Three teammates per row */
+    }
+}
+
+@media (min-width: 1200px) {
+    .teammate {
+        flex-basis: 25%; /* Four teammates per row */
+    }
+}
+
+.teammate img {
+    width: 80%; /* Scale image to the container's width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Less dramatic border-radius */
+    margin: 10px 0; /* Adds some space above and below the image */
+}
+
+.teammate h3, .teammate p {
+    padding: 0 10px; /* Adds some padding for text */
+    font-size: 1rem; /* Adjusts font size if needed */
+    margin: 5px 0; /* Adds some vertical margin */
+}
+
+.contact {
+    padding: 10px;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar p {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
